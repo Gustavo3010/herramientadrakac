@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Insurance Advisor</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 25;
+      padding: 0;
+      background-image: url('fondo7.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: ce nter;
+    }
+
+    header {
+      background-color:;
+      color: #FFFFFF;
+      padding: 20px;
+      text-align: Left ;
+    }
+
+    nav {
+      background-color: #F8F9FA;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      display: inline-block;
+      padding: 10px;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      animation: fadeIn 1s ease, slideInLeft 1s ease;
+    }
+
+    section:nth-child(even) {
+      animation: fadeIn 1s ease, slideInRight 1s ease;
+    }
+
+    footer {
+      background-color: #FFFFFF;
+      padding: 10px;
+      text-align: center;
+      color: #000000;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    /* Estilos específicos de la página */
+    .tabs {
+      display: flex;
+      justify-content: center;
+    }
+
+    .tabs li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    .tabs li:last-child {
+      margin-right: 0;
+    }
+
+    .tabs li a {
+      padding: 10px;
+      color: #007BFF;
+      text-decoration: none;
+      border: 1px solid #007BFF;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tabs li a.active {
+      background-color: #007BFF;
+      color: #FFF;
+    } 
+
+    .tabs li a:hover {
+      background-color: #007BFF;
+      color: #FFF;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Herramienta Medical Insurance Advisor</h1>
+  </header>
+
+  <nav>
+    <ul class="tabs">
+      <li><a href="#inicio-inicio">Inicio</a></li>
+      <li><a href="#Federal-2023">Federal 2023</a></li>
+      <li><a href="#por-hora">Horas</a></li>
+      <li><a href="#por-semanas">Semanas</a></li>
+      <li><a href="#por-quincena">Quincenas</a></li>
+      <li><a href="#por-mes">Meses</a></li>
+      <li><a href="#acerca-de">Acerca de</a></li>
+      <li><a href="#terminos-condiciones">Términos y condiciones</a></li>
+      <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+      <li><a href="#Soporte-tecnico">Soporte Técnico</a></li>
+      
+    </ul>
+  </nav>
+
+  <section id="por-hora" style="display: none;">
+    <h2>Obtendremos resultados a la semana</h2>
+    <h2>Ingresos por Hora</h2>
+    <form id="hourly-form">
+      <label for="hourlyRate">Ganancia por hora:</label>
+      <input type="number" id="hourlyRate" step="0.01" required>
+      <br>
+      <label for="hoursPerWeek">Horas trabajadas por semana:</label>
+      <input type="number" id="hoursPerWeek" step="0.1" required>
+      <br>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="hourly-result"></div>
+  </section>
+
+  <section id="por-semanas" style="display: none;">
+    <h2>Obtendremos resultados al año</h2>
+    <h2>Ingresos por semanas</h2>
+    <form id="weekly-form">
+      <label for="weeklyRate">Ganancia por semana:</label>
+      <input type="number" id="weeklyRate" step="0.01" required>
+      <br>
+      <label for="weeksPerYear">Cuantas semanas al año:</label>
+      <input type="number" id="weeksPerYear" step="1" required>
+      <br>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="weekly-result"></div>
+  </section>
+
+  <section id="por-quincena" style="display: none;">
+    <h2>Obtendremos resultados al año</h2>
+    <h2>Ingresos por quincena</h2>
+    <form id="biweekly-form">
+      <label for="biweeklyRate">Ganancia por quincena:</label>
+      <input type="number" id="biweeklyRate" step="0.01" required>
+      <br>
+      <label for="biweeksPerYear">Cuantas quincenas al año:</label>
+      <input type="number" id="biweeksPerYear" step="1" required>
+      <br>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="biweekly-result"></div>
+  </section>
+
+  <section id="por-mes" style="display: none;">
+    <h2>Obtendremos resultados al año</h2>
+    <h2>Ingresos por mes</h2>
+    <form id="monthly-form">
+      <label for="monthlyRate">Ganancia por mes:</label>
+      <input type="number" id="monthlyRate" step="0.01" required>
+      <br>
+      <label for="monthsPerYear">Cuantos meses al año:</label>
+      <input type="number" id="monthsPerYear" step="1" required>
+      <br>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="monthly-result"></div>
+  </section>
+  
+
+  <section id="inicio-inicio">
+    <h2>Inicio</h2>
+    <p>¡Bienvenido a Herramienta Medical Insurance Advisor! En esta página, podrás calcular los ingresos de cada cliente de forma sencilla y eficiente. Nuestra herramienta te ayudará a determinar dichos ingresos por hora, semana, quincena y mes, y también te mostrará la proyección anual de los ingresos. Medical Insurance Advisor está aquí para facilitarte el proceso. Nuestra calculadora te brindará resultados precisos y te ayudará a tomar decisiones informadas sobre los ingresos de cada cliente. Además, en la sección de "Acerca de" encontrarás información detallada sobre la finalidad de esta página. Está diseñada especialmente para los trabajadores de Drakac Medical Services, LLC, brindándote una herramienta oficial y confiable para el cálculo de los ingresos de cada cliente. No olvides revisar nuestros "Términos y condiciones" para asegurarte de utilizar esta página correctamente y proteger la información personal del cliente. ¡Comienza a calcular ingresos ahora mismo y aprovecha al máximo Medical Insurance Advisor! Si tienes alguna pregunta o necesitas asistencia adicional, estamos aquí para ayudarte. ¡Disfruta de tu experiencia en Medical Insurance Advisor! Atentamente, El equipo de Medical Insurance Advisor</p>
+  </section>
+
+  <section id="acerca-de" style="display: none;">
+    <h2>Acerca de</h2>
+    <p>Esta página se ha creado con el fin de facilitar el proceso de calcular ingresos. Uso oficial para trabajadores de Drakac Medical Services, LLC.
+
+      Medical Insurance Advisor es una herramienta diseñada para ayudar a los trabajadores de Drakac Medical Services, LLC a calcular los ingresos de sus clientes de manera eficiente y precisa. Nuestra calculadora permite calcular los ingresos por hora, semana, quincena y mes, así como obtener una proyección anual de los ingresos.
+      
+      En Medical Insurance Advisor, nos preocupamos por brindar una herramienta confiable y de calidad para facilitar el trabajo de los profesionales en la industria de seguros médicos. Nuestra página ha sido diseñada pensando en la comodidad y usabilidad, permitiendo a los usuarios realizar cálculos rápidos y obtener resultados precisos.
+      
+      Estamos comprometidos con la privacidad y seguridad de la información de nuestros usuarios. Todos los datos ingresados en la calculadora se mantienen confidenciales y no son compartidos con terceros sin autorización..</p>
+
+   
+      
+  </section>
+
+  <section id="terminos-condiciones" style="display: none;">
+    <h2>Términos y condiciones</h2>
+    <p>Al hacer uso de esta página, usted acepta los siguientes términos y condiciones:
+
+      La calculadora de ingresos proporcionada en esta página es solo una herramienta de referencia y no debe considerarse como asesoramiento financiero o legal. Los resultados obtenidos pueden variar y deben ser verificados por un profesional cualificado.
+      
+      Los datos ingresados en la calculadora son responsabilidad del usuario. Nos esforzamos por mantener la confidencialidad de la información proporcionada, pero no nos hacemos responsables de cualquier pérdida o filtración de datos.
+      
+      Esta página y su contenido están protegidos por derechos de autor. Queda prohibida la reproducción o distribución no autorizada de cualquier parte de esta página sin nuestro consentimiento.
+      
+      El uso de esta página y su calculadora es responsabilidad exclusiva del usuario. No nos hacemos responsables de cualquier daño o pérdida causada por el uso de esta página.
+      
+      Nos reservamos el derecho de modificar, actualizar o eliminar cualquier parte de esta página o sus términos y condiciones sin previo aviso.
+      
+      Al hacer uso de esta página, usted acepta cumplir con estos términos y condiciones. Si no está de acuerdo con alguno de ellos, le recomendamos que no utilice esta página.</p>
+      
+  </section>
+
+  <section id="Soporte-tecnico" style="display: none;">
+    <h2>Contacta con el creador</h2>
+    <p><a href="https://wa.me/+17868225742" target="_blank">Chatea con el Soporte Técnico en WhatsApp</a></p>
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Medical Insurance Advisor. Todos los derechos reservados. <a href="politica-privacidad.html">Política de Privacidad</a></p>
+  </footer>
+
+  <section id="Federal-2023" style="display: none;">
+    <h2>Federal 2022 (Coverege 2023)</h2>
+    <div>
+      <img src="Federal.png" alt="descripción_de_la_imagen">
+    </div>
+    
+
+  <script src="script.js"></script>
+  <script>
+    const tabs = document.querySelectorAll('.tabs li a');
+    const sections = document.querySelectorAll('section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        sections.forEach(section => {
+          section.style.display = 'none';
+        });
+        target.style.display = 'block';
+        scrollTo(target);
+        history.pushState(null, '', this.getAttribute('href'));
+      });
+    });
+
+    function scrollTo(element) {
+      window.scrollTo({
+        behavior: 'smooth',
+        top: element.offsetTop - 50,
+      });
+    }
+
+    // Mostrar la sección correspondiente a través de la URL
+    const currentHash = window.location.hash;
+    if (currentHash) {
+      const target = document.querySelector(currentHash);
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+      target.style.display = 'block';
+      scrollTo(target);
+    }
+  </script>
+</body>
+</html>

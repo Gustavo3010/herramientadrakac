@@ -1,0 +1,66 @@
+<style>
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #F8F9FA;
+    padding: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline;
+  }
+
+  nav ul li a {
+    display: inline-block;
+    padding: 10px;
+    color: #007BFF;
+    text-decoration: none;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  footer {
+    background-color: #F8F9FA;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+  }
+
+  /* Estilos específicos de la página */
+  body {
+    background-color: #FFF;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+
+  #por-hora, #por-semanas, #por-quincena, #por-mes, #acerca-de, #terminos-condiciones {
+    background-color: #FFF;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+  }
+</style>
